@@ -15,7 +15,13 @@
         border: 1px solid #4791d0;
         padding: 5px 10px 8px 10px;
       }
-        
+       button:hover {
+        background-color: #5583da;
+        border: 1px solid #0F5897;
+      }
+      .text{
+        display: none;
+    } 
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +33,36 @@
     <h1 style=" letter-spacing: 3px;font-size:30px;color: rgb(16, 15, 77);">歡迎訂購</h1>
     <p style=" letter-spacing: 5px; font-size: 20px;">您好!我們已經收到你們的訂購表單</p>
     <img src="https://i.imgur.com/m3GciXW.gif" alt="">
+        <p class="message box">
+        Please press the button down here,and you may see the message box.</p>
+      <p>
+        <button type="button" class="button" id="getMessage">
+          按此即可留言!!
+        </button>
+      </p>
+      <div class="text">
+        <textarea name="area" cols="30" rows="10"></textarea>
+        <button type="button" class="button2" id="sendIt">
+          送出
+        </button>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function(){
+          document.getElementById('getMessage').onclick = function(){
+            document.getElementsByClassName('message')[0].textContent="歡迎在下方寫下您想說的話";
+          }
+          document.getElementById('sendIt').onclick = function(){
+            document.getElementsByClassName('button2')[0].textContent="謝謝您的留言!";
+          }
+        });
+        $(document).ready(function () {
+          $("button").addClass("animated bounce");
+          $('.button').click(function () { 
+            $('.text').fadeIn(5000);
+              
+          });
+      });
+      </script>
     <p><a href="https://berniceariel.github.io/fju-beverage-shop.github.io/">
         <button type="button" class="button">點此回首頁</button></a></p>
     </div>
